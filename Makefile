@@ -1,0 +1,2 @@
+all:
+	rm -f *.out
