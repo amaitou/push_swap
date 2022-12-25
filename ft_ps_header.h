@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2022/12/22 12:44:56 by amait-ou         ###   ########.fr       */
+/*   Updated: 2022/12/25 10:16:25 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct structure
 {
 	int	*arr;
 	int	top;
-	int	size;	
+	int	size;
 }	t_stack;
 
 t_stack ft_filler(int ac, char **ag, char c);
