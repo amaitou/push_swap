@@ -6,13 +6,13 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 10:20:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2022/12/21 10:24:00 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:35:28 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ps_header.h"
 
-static void ft_putchar(char c)
+static void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -27,5 +27,5 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		++i;
 	}
-    ft_putchar('\n');
+	ft_putchar('\n');
 }

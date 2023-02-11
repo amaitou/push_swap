@@ -6,15 +6,15 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 10:24:50 by amait-ou          #+#    #+#             */
-/*   Updated: 2022/12/21 11:29:18 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:36:08 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ps_header.h"
 
-void ft_swap(t_stack *st, char c)
+void	ft_swap(t_stack *st, char c)
 {
-    int	temp;
+	int	temp;
 
 	if (st->size <= 1)
 		return ;
@@ -29,14 +29,14 @@ void ft_swap(t_stack *st, char c)
 		return ;
 }
 
-void ft_swap_both(t_stack *sta, t_stack *stb)
+void	ft_swap_both(t_stack *sta, t_stack *stb)
 {
 	ft_swap(sta, 's');
 	ft_swap(stb, 's');
 	ft_putstr("ss");
 }
 
-void ft_push(t_stack *st1, t_stack *st2, char c)
+void	ft_push(t_stack *st1, t_stack *st2, char c)
 {
 	if (st1->size <= 0)
 		return ;
@@ -51,11 +51,11 @@ void ft_push(t_stack *st1, t_stack *st2, char c)
 		ft_putstr("pb");
 }
 
-void ft_rotate(t_stack *st, char c)
+void	ft_rotate(t_stack *st, char c)
 {
 	int	t;
 	int	i;
-	
+
 	if (st->size <= 1)
 		return ;
 	t = st->arr[st->top];
@@ -74,7 +74,7 @@ void ft_rotate(t_stack *st, char c)
 		return ;
 }
 
-void ft_rotate_both(t_stack *st1, t_stack *st2)
+void	ft_rotate_both(t_stack *st1, t_stack *st2)
 {
 	ft_rotate(st1, 'r');
 	ft_rotate(st2, 'r');

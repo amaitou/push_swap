@@ -6,21 +6,21 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2022/12/25 10:09:26 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:37:05 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ps_header.h"
 
-void    ft_traversal(t_stack *st)
+void	ft_traversal(t_stack *st)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < st->size)
-    {
-        printf("%d ", st->arr[i]);
-        ++i;
-    }
-    printf("\n");
+	i = 0;
+	while (i < st->size)
+	{
+		printf("%d ", st->arr[i]);
+		++i;
+	}
+	printf("\n");
 }
