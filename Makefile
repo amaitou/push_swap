@@ -13,7 +13,8 @@ CFILES = push_swap.c \
 		 ft_five_hundred_nums.c \
 		 ft_hundred_nums.c \
 		 ft_array_parse.c \
-		 ft_traverse.c
+		 ft_traverse.c \
+		 ft_bubble_sort.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

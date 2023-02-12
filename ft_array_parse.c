@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 06:28:41 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 07:05:36 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,20 @@ void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
 	char	*line;
 	char	**p;
 	int		i;
-	int		j;
 	int		k;
+	int		size;
 	
 	line = read_args(ac, ag);
 	p = ft_split(line, ' ');
-	j = array_size(p) - 1;
-	k = j;
-	st->arr = (int *)malloc(sizeof(int) * j);
+	size = array_size(p) - 1;
+	k = size;
+	st->arr = (int *)malloc(sizeof(int) * size);
 	st->size = 0;
 	st->top = -1;
 	i = 0;
 	if (c == 'a')
 	{
-		while (i <= j)
+		while (i <= size)
 		{
 			st->arr[i] = ft_atoi(p[k]);
 			st->top++;
