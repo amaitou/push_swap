@@ -6,11 +6,11 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 00:16:33 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 07:54:37 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:46:12 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "push_swap.h"
 
 static void copy_stack(t_stack *st)
 {

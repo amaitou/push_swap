@@ -4,10 +4,9 @@ NAME = push_swap
 CFILES = push_swap.c \
 		 ft_four_nums.c \
 		 ft_five_nums.c \
-		 ft_ps_helper.c \
-		 ft_ps_rules_1.c \
-		 ft_ps_rules_2.c \
-		 ft_ps_traversal.c \
+		 ft_helpers.c \
+		 ft_rules_1.c \
+		 ft_rules_2.c \
 		 ft_three_nums.c \
 		 ft_two_nums.c \
 		 ft_five_hundred_nums.c \

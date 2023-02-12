@@ -6,11 +6,11 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:37:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 12:25:51 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:48:11 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "push_swap.h"
 
 int	main(int ac, char **ag)
 {

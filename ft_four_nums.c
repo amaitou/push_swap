@@ -6,11 +6,11 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 22:52:49 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/11 19:33:29 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:46:31 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "push_swap.h"
 
 void	ft_four_nums(t_stack *sta, t_stack *stb)
 {
