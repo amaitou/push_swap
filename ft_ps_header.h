@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 06:57:25 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 09:51:04 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ void	ft_reverse_rotate_both(t_stack *st1, t_stack *st2);
 // Program Helpers
 int		ft_find_min(t_stack *st);
 
-// Copy array
-void copy_stack(t_stack *st);
-
 // Nums Algorithms
 void	ft_two_nums(t_stack *st);
 void	ft_three_nums(t_stack *st);
@@ -53,4 +50,10 @@ void bubble_sort(t_stack *st);
 
 // Array Traversal
 void	ft_traverse(t_stack *st);
+
+// Checkers
+int check_duplicates(t_stack *st);
+int check_range(t_stack *st);
+int	ft_a2i(const char *str);
+
 #endif

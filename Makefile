@@ -14,7 +14,9 @@ CFILES = push_swap.c \
 		 ft_hundred_nums.c \
 		 ft_array_parse.c \
 		 ft_traverse.c \
-		 ft_bubble_sort.c
+		 ft_bubble_sort.c \
+		 ft_checker.c \
+		 ft_a2i.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a
@@ -22,16 +24,16 @@ SUPERLIB = ./superlib/superlib.a
 all : $(SUPERLIB) $(NAME)
 
 $(SUPERLIB):
-	$(MAKE) -C $(SUPERLIB_DIR)
+	@$(MAKE) -C $(SUPERLIB_DIR)
 
 $(NAME): $(CFILES)
 	$(CC) $(CFLAGS) $? $(SUPERLIB) -o $@
 
 clean:
-	$(MAKE) fclean -C $(SUPERLIB_DIR)
+	@$(MAKE) fclean -C $(SUPERLIB_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 

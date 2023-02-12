@@ -1,54 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bubble_sort.c                                   :+:      :+:    :+:   */
+/*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 00:16:33 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 07:54:37 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/12 09:10:11 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/12 09:36:07 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ps_header.h"
 
-static void copy_stack(t_stack *st)
-{
-	int	*p;
-	int	i;
-
-	i = 0;
-	st->c_arr = (int *)malloc(sizeof(int) * st->len);
-	if (!st->c_arr)
-		return ;
-	while (i < st->size)
-	{
-		st->c_arr[i] = st->arr[i];
-		++i;
-	}
-}
-
-void bubble_sort(t_stack *st)
+int check_duplicates(t_stack *st)
 {
 	int	i;
 	int	j;
-	int	t;
-	
+
 	i = 0;
-	copy_stack(st);
 	while (i < st->size)
 	{
 		j = i + 1;
 		while (j < st->size)
 		{
-			if (st->c_arr[i] > st->c_arr[j])
-			{
-				t = st->c_arr[i];
-				st->c_arr[i] = st->c_arr[j];
-				st->c_arr[j] = t;
-			}
+			if (st->arr[i] == st->arr[j])
+				return (0);
 			++j;
 		}
 		++i;
 	}
+	return (1);
+}
+
+int check_range(t_stack *st)
+{
+	int	i;
+
+	i = 0;
+	while (i < st->size)
+	{
+		if (st->arr[i] >= INT_MAX || st->arr[i] <= INT_MIN)
+			return (0);
+		++i;
+	}
+	return (1);
 }
