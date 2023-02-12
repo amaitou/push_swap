@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/01 18:11:30 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:09:27 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
+	char	*h;
+	char	*n;
+	size_t	j;
 
-	i = 0;
-	while (i < st->size)
+	h = (char *)haystack;
+	n = (char *)needle;
+	if (!h && !len)
+		return (NULL);
+	if (!*n)
+		return (h);
+	while (*h && len)
 	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
+		j = 0;
+		while (h[j] == n[j] && j < len && h[j])
+			++j;
+		if (!n[j])
+			return (h);
+		++h;
+		--len;
 	}
-	ft_printf("\n");
+	return ((void *)0);
 }

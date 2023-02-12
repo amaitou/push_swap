@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 10:24:50 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/11 19:36:08 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 06:29:35 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_swap(t_stack *st, char c)
 	st->arr[st->top] = st->arr[st->top - 1];
 	st->arr[st->top - 1] = temp;
 	if (c == 'a')
-		ft_putstr("sa");
+		ft_putendl_fd("sa", 1);
 	else if (c == 'b')
-		ft_putstr("sb");
+		ft_putendl_fd("sb", 1);
 	else
 		return ;
 }
@@ -33,7 +33,7 @@ void	ft_swap_both(t_stack *sta, t_stack *stb)
 {
 	ft_swap(sta, 's');
 	ft_swap(stb, 's');
-	ft_putstr("ss");
+	ft_putendl_fd("ss", 1);
 }
 
 void	ft_push(t_stack *st1, t_stack *st2, char c)
@@ -46,9 +46,9 @@ void	ft_push(t_stack *st1, t_stack *st2, char c)
 	st2->size++;
 	st2->top++;
 	if (c == 'a')
-		ft_putstr("pa");
+		ft_putendl_fd("pa", 1);
 	else
-		ft_putstr("pb");
+		ft_putendl_fd("pb", 1);
 }
 
 void	ft_rotate(t_stack *st, char c)
@@ -67,9 +67,9 @@ void	ft_rotate(t_stack *st, char c)
 	}
 	st->arr[i] = t;
 	if (c == 'a')
-		ft_putstr("ra");
+		ft_putendl_fd("ra", 1);
 	else if (c == 'b')
-		ft_putstr("rb");
+		ft_putendl_fd("rb", 1);
 	else
 		return ;
 }
@@ -78,5 +78,5 @@ void	ft_rotate_both(t_stack *st1, t_stack *st2)
 {
 	ft_rotate(st1, 'r');
 	ft_rotate(st2, 'r');
-	ft_putstr("rr");
+	ft_putendl_fd("rr", 1);
 }

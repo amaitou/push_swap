@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/29 23:34:57 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:08:45 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	*p;
 
-	i = 0;
-	while (i < st->size)
-	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
-	}
-	ft_printf("\n");
+	p = (char *)s;
+	while (*p && *p != (char)c)
+		++p;
+	if (*p == (char)c)
+		return (p);
+	return ((void *)0);
 }

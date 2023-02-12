@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/30 01:00:22 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:09:23 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
+	t_uc	*a;
+	t_uc	*b;
 
+	a = (t_uc *)s1;
+	b = (t_uc *)s2;
 	i = 0;
-	while (i < st->size)
+	while ((*(a + i) || *(b + i)) && i < n)
 	{
-		ft_printf("%d ", st->arr[i]);
+		if (!(*(a + i) == *(b + i)))
+			return (*(a + i) - *(b + i));
 		++i;
 	}
-	ft_printf("\n");
+	return (0);
 }

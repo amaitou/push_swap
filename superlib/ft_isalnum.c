@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/29 11:28:02 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:06:22 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+/*
 
-void	ft_traversal(t_stack *st)
+	This function returns true if the given character is alphanumeric
+	(either number or alphabet)
+
+	since we have created the ft_isdigit() and ft_isalpha() functions
+	I use them right here to check
+
+*/
+
+#include "./superlib.h"
+
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (i < st->size)
-	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
-	}
-	ft_printf("\n");
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 10:25:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/11 19:36:46 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 06:29:54 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_reverse_rotate(t_stack *st, char c)
 	}
 	st->arr[i] = t;
 	if (c == 'a')
-		ft_putstr("rra");
+		ft_putendl_fd("rra", 1);
 	else if (c == 'b')
-		ft_putstr("rrb");
+		ft_putendl_fd("rrb", 1);
 	else
 		return ;
 }
@@ -39,5 +39,5 @@ void	ft_reverse_rotate_both(t_stack *st1, t_stack *st2)
 {
 	ft_reverse_rotate(st1, 'r');
 	ft_reverse_rotate(st2, 'r');
-	ft_putstr("rrr");
+	ft_putendl_fd("rrr", 1);
 }

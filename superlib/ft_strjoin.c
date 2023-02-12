@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/01 22:24:19 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:08:59 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	*p;
 
+	if (!s1 || !s2)
+		return ((void *)0);
+	p = (char *)malloc((sizeof(char) * (ft_strlen(s1) + ft_strlen(s2))) + 1);
+	if (!p)
+		return ((void *)0);
 	i = 0;
-	while (i < st->size)
+	j = 0;
+	while (s1[i])
 	{
-		ft_printf("%d ", st->arr[i]);
+		p[i] = s1[i];
 		++i;
 	}
-	ft_printf("\n");
+	while (s2[j])
+	{
+		p[i] = s2[j];
+		++j;
+		++i;
+	}
+	p[i] = '\0';
+	return (p);
 }

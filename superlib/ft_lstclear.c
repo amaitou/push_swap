@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/05 12:08:13 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:06:58 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*t;
 
-	i = 0;
-	while (i < st->size)
+	if (!del || !lst)
+		return ;
+	while ((*lst) != NULL)
 	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
+		t = *lst;
+		del((*lst)->content);
+		((*lst)) = (*lst)->next;
+		free(t);
 	}
-	ft_printf("\n");
+	*lst = NULL;
 }

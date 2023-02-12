@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/30 16:57:19 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:07:33 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	t_uc	*a;
+	t_uc	*b;
+	size_t	i;
 
 	i = 0;
-	while (i < st->size)
+	a = (t_uc *)s1;
+	b = (t_uc *)s2;
+	while (i < n)
 	{
-		ft_printf("%d ", st->arr[i]);
+		if (!(*a == *b))
+			return (*a - *b);
 		++i;
+		++a;
+		++b;
 	}
-	ft_printf("\n");
+	return (0);
 }

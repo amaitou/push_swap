@@ -1,26 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_putsigned.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/05/11 17:10:28 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:08:20 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+static int	helper(int nb)
 {
 	int	i;
 
 	i = 0;
-	while (i < st->size)
-	{
-		ft_printf("%d ", st->arr[i]);
+	if (nb <= 0)
 		++i;
+	while (nb)
+	{
+		++i;
+		nb /= 10;
 	}
-	ft_printf("\n");
+	return (i);
+}
+
+int	ft_putsigned(int nb)
+{
+	if (nb >= 0 && nb <= 9)
+		ft_putchar(nb + 48);
+	else if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putsigned(nb * (-1));
+	}
+	else
+	{
+		ft_putsigned(nb / 10);
+		ft_putsigned(nb % 10);
+	}
+	return (helper(nb));
 }

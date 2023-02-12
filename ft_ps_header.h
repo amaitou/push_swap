@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/11 19:34:45 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 06:35:46 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 # define FT_PS_HEADER_H
 
 /* Header Files */
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-/* Stack */
-typedef struct structure
+# include "./superlib/superlib.h"
+typedef struct s_structure
 {
 	int	*arr;
 	int	top;
 	int	size;
 }	t_stack;
 
-t_stack	ft_filler(int ac, char **ag, char c);
-int		ft_atoi(const char *str);
-void	ft_traversal(t_stack *st);
-void	ft_putstr(char *str);
+// Array Parsing
+void	ft_array_parse(t_stack *st, int ac, char **ag, char c);
+
+// Program Rules
 void	ft_swap(t_stack *st, char c);
 void	ft_swap_both(t_stack *sta, t_stack *stb);
 void	ft_push(t_stack *st1, t_stack *st2, char c);
@@ -37,10 +33,17 @@ void	ft_rotate(t_stack *st, char c);
 void	ft_rotate_both(t_stack *st1, t_stack *st2);
 void	ft_reverse_rotate(t_stack *st, char c);
 void	ft_reverse_rotate_both(t_stack *st1, t_stack *st2);
+
+// Program Helpers
+
 int		ft_find_min(t_stack *st);
+
+// Nums Algorithms
 void	ft_two_nums(t_stack *st);
 void	ft_three_nums(t_stack *st);
 void	ft_four_nums(t_stack *sta, t_stack *stb);
 void	ft_five_nums(t_stack *sta, t_stack *stb);
 
+// Array Traversal
+void	ft_traverse(t_stack *st);
 #endif

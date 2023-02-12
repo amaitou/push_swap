@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/06 21:02:15 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:07:14 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
+	t_list	*h;
+	t_list	*t;
 
-	i = 0;
-	while (i < st->size)
+	if (!lst)
+		return ((void *)0);
+	h = ft_lstnew(f(lst->content));
+	if (!h)
+		return ((void *)0);
+	t = h;
+	lst = lst->next;
+	while (lst)
 	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
+		t->next = ft_lstnew(f(lst->content));
+		if (!t)
+			ft_lstclear(&h, del);
+		t = t->next;
+		lst = lst->next;
 	}
-	ft_printf("\n");
+	return (h);
 }

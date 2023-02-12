@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_putstr.c                                     :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:20:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/11 19:35:28 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/29 23:07:18 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:09:52 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-static void	ft_putchar(char c)
+int	ft_tolower(int c)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*(str + i) != '\0')
-	{
-		ft_putchar(str[i]);
-		++i;
-	}
-	ft_putchar('\n');
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

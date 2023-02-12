@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/29 12:18:49 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:06:31 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+/*
+ 	
+ 	this function chacks if the given character is a valid 7-bits.
+	
+	- 7-bits chars are the characters which have 7 bits in their 
+	binary representation when they got converted from "ascii" to "binary"
 
-void	ft_traversal(t_stack *st)
+	0   -> 0
+	127 -> 1111111
+
+ */
+
+#include "./superlib.h"
+
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 0;
-	while (i < st->size)
-	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
-	}
-	ft_printf("\n");
+	return (c <= 127 && c >= 0);
 }

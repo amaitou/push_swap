@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/09/29 22:59:03 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:09:57 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (i < st->size)
-	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
-	}
-	ft_printf("\n");
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

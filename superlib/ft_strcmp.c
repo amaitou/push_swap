@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/21 19:35:18 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:22:28 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (i < st->size)
+	while (s1[i] && s2[i])
 	{
-		ft_printf("%d ", st->arr[i]);
+		if (!(s1[i] == s2[i]))
+			return (s1[i] - s2[i]);
 		++i;
 	}
-	ft_printf("\n");
+	if (s1[i])
+		return (s1[i]);
+	else if (s2[i])
+		return (-s2[i]);
+	else
+		return (0);
 }

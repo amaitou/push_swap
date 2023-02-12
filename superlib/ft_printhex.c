@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/17 12:58:16 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:07:58 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+static int	ft_numlen_int(t_ul nb)
 {
 	int	i;
 
 	i = 0;
-	while (i < st->size)
-	{
-		ft_printf("%d ", st->arr[i]);
+	if (nb == 0)
 		++i;
+	while (nb > 0)
+	{
+		++i;
+		nb /= 16;
 	}
-	ft_printf("\n");
+	return (i);
+}
+
+int	ft_printhex(t_ul address, char *s)
+{
+	if (address == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	if (address > 15)
+	{
+		ft_printhex(address / 16, s);
+		ft_putchar(s[address % 16]);
+	}
+	else
+		ft_putchar(s[address % 16]);
+	return (ft_numlen_int(address));
 }

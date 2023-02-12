@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/05 08:59:03 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:07:24 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+/*
 
-void	ft_traversal(t_stack *st)
+	This is a linked list, so if you want to count te size of this linked
+	list, you have to achieve the last node wich is "NULL" and increment
+	the counter by one in each move to the next
+
+*/
+
+#include "./superlib.h"
+
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
 	i = 0;
-	while (i < st->size)
+	while (lst != (void *)0)
 	{
-		ft_printf("%d ", st->arr[i]);
 		++i;
+		lst = lst->next;
 	}
-	ft_printf("\n");
+	return (i);
 }

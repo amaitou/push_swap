@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_traversal.c                                  :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 10:16:48 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 04:56:20 by amait-ou         ###   ########.fr       */
+/*   Created: 2022/10/03 16:37:16 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/24 00:09:18 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ps_header.h"
+#include "./superlib.h"
 
-void	ft_traversal(t_stack *st)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	size_t	i;
+	t_ui	j;
+	char	*p;
 
-	i = 0;
-	while (i < st->size)
+	if (!s)
+		return ((void *)0);
+	i = ft_strlen(s);
+	j = 0;
+	p = (char *)malloc((sizeof(char) * i) + 1);
+	if (!p)
+		return ((void *)0);
+	while (s[j])
 	{
-		ft_printf("%d ", st->arr[i]);
-		++i;
+		p[j] = f(j, s[j]);
+		++j;
 	}
-	ft_printf("\n");
+	p[j] = '\0';
+	return (p);
 }
