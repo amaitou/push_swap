@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 09:51:04 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:27:01 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ void	ft_traverse(t_stack *st);
 // Checkers
 int check_duplicates(t_stack *st);
 int check_range(t_stack *st);
-int	ft_a2i(const char *str);
+int	ft_a2i(t_stack *st, const char *str);
+
+// Array Error
+void ft_error(t_stack *st);
 
 #endif

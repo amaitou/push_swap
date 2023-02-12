@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 09:37:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 12:07:45 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:35:52 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	signs(char c)
 
 static int	ft_random(char *s)
 {
-	if (*s == '-' || *s == '+')
+	if ((*s == '-' || *s == '+') && *(s + 1))
 		++s;
 	while ((*s >= '0' && *s <= '9') && *s)
 		++s;
@@ -56,7 +56,7 @@ static int	ft_random(char *s)
 	return (1);
 }
 
-int	ft_a2i(const char *str)
+int	ft_a2i(t_stack *st, const char *str)
 {
 	char	*p;
 	int		s;
@@ -84,10 +84,7 @@ int	ft_a2i(const char *str)
 		}	
 	}
 	else
-	{
-		ft_putendl_fd("Error", 1);
-		exit(0);
-	}
+		ft_error(st);
 
 	return (r * s);
 }

@@ -16,7 +16,8 @@ CFILES = push_swap.c \
 		 ft_traverse.c \
 		 ft_bubble_sort.c \
 		 ft_checker.c \
-		 ft_a2i.c
+		 ft_a2i.c \
+		 ft_error.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

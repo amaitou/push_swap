@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:37:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 12:09:14 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:25:51 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int ac, char **ag)
 		ft_array_parse(&sta, ac, ag, 'a');
 		bubble_sort(&sta);
 		if (!check_duplicates(&sta))
-			ft_printf("There are some duplicates\n");
+			ft_error(&sta);
 		if (!check_range(&sta))
-			ft_printf("Out of range\n");
+			ft_error(&sta);
 		ft_array_parse(&stb, ac, ag, 'b');
 		if (sta.size == 2)
 			ft_two_nums(&sta);
