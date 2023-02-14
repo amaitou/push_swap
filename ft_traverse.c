@@ -6,20 +6,20 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 06:33:53 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/12 12:47:09 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:59:04 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_traverse(t_stack *st)
+void	ft_traverse(t_stack *st, int *arr)
 {
 	int	i;
 
 	i = 0;
 	while (i < st->size)
 	{
-		ft_printf("%d ", st->arr[i]);
+		ft_printf("%d ", arr[i]);
 		++i;
 	}
 	ft_printf("\n");
