@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_checkers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 09:10:11 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/14 03:38:36 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:37:59 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_duplicates(t_stack *st)
+int	check_duplicates(t_stack *st)
 {
 	int	i;
 	int	j;
@@ -50,7 +50,7 @@ int	int_count(long int nb)
 	return (i);
 }
 
-int check_range(t_stack *st)
+int	check_range(t_stack *st)
 {
 	int	i;
 

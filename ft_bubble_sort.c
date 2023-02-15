@@ -6,13 +6,13 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 00:16:33 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/14 21:24:27 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:37:46 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void copy_stack(t_stack *st)
+static void	copy_stack(t_stack *st)
 {
 	int	*p;
 	int	i;
@@ -28,12 +28,12 @@ static void copy_stack(t_stack *st)
 	}
 }
 
-void bubble_sort(t_stack *st)
+void	bubble_sort(t_stack *st)
 {
 	int	i;
 	int	j;
 	int	t;
-	
+
 	i = 0;
 	copy_stack(st);
 	while (i < st->size)

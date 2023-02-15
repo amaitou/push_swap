@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/15 17:33:16 by amait-ou          #+#    #+#              #
+#    Updated: 2023/02/15 18:45:50 by amait-ou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 CFLAGS = -Wextra -Werror -Werror
 NAME = push_swap
@@ -12,7 +24,8 @@ CFILES = push_swap.c \
 		 ft_error.c \
 		 ft_stack_perform_1.c \
 		 ft_stack_perform_2.c \
-		 ft_utils.c
+		 ft_utils.c \
+		 ft_perform_all.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

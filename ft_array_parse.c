@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/14 07:12:04 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:37:06 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static char	*read_args(int ac, char **ag)
 {
-	int	i;
-	char *line;
+	int		i;
+	char	*line;
 
 	i = 1;
 	line = (void *)0;
@@ -28,14 +28,14 @@ static char	*read_args(int ac, char **ag)
 	return (line);
 }
 
-static int array_size(char **p)
+static int	array_size(char **p)
 {
 	int	i;
 
 	i = 0;
 	while (p[i])
 		++i;
-	return(i);
+	return (i);
 }
 
 void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
@@ -45,7 +45,7 @@ void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
 	int		i;
 	int		k;
 	int		size;
-	
+
 	line = read_args(ac, ag);
 	p = ft_split(line, ' ');
 	size = array_size(p) - 1;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_helpers.c                                       :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 23:29:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/14 10:45:39 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:38:48 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_find_max(t_stack *st)
 	return (t);
 }
 
-int ft_find_value_by_index(int value, t_stack *st, int *arr)
+int	ft_find_value_by_index(int value, t_stack *st, int *arr)
 {
 	int	i;
 
