@@ -35,24 +35,9 @@ int	main(int ac, char **ag)
 		else if (sta.size == 5)
 			ft_five_nums(&sta, &stb);
 		else if (sta.size == 100)
-			pusher(&sta, &stb, 0, 15);
+			ft_stack_big_range(&sta, &stb, 0, 15);
 		else if (sta.size == 500)
-			pusher(&sta, &stb, 0, 30);
-		// ft_traverse(&sta, sta.c_arr);
-		// ft_traverse(&sta, sta.arr);
-		// ft_printf("[.] Size Of A -> [%d]\n", sta.size);
-		// ft_printf("[.] Top  Of A -> [%d]\n", sta.top);
-		// ft_printf("[.] Size Of B -> [%d]\n", stb.size);
-		// ft_printf("[.] Top  Of B -> [%d]\n", stb.top);
-		// ft_reverse_rotate(&sta, 'a');
-		// ft_reverse_rotate(&sta, 'a');
-		// ft_reverse_rotate(&sta, 'a');
-		// ft_reverse_rotate(&sta, 'a');
-		// ft_reverse_rotate(&sta, 'a');
-		// ft_printf("[.] Size Of A -> [%d]\n", sta.size);
-		// ft_printf("[.] Top  Of A -> [%d]\n", sta.top);
-		// ft_printf("[.] Size Of B -> [%d]\n", stb.size);
-		// ft_printf("[.] Top  Of B -> [%d]\n", stb.top);
+			ft_stack_big_range(&sta, &stb, 0, 30);
 	}
 	return (0);
 }

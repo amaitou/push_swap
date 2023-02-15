@@ -44,7 +44,7 @@ static int	ft_random(char *s)
 	return (1);
 }
 
-int	ft_a2i(t_stack *st, const char *str)
+int	ft_atoi_based(t_stack *st, const char *str)
 {
 	char	*p;
 	int		s;

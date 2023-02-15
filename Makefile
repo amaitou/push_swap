@@ -2,22 +2,17 @@ CC = cc
 CFLAGS = -Wextra -Werror -Werror
 NAME = push_swap
 CFILES = push_swap.c \
-		 ft_four_nums.c \
-		 ft_five_nums.c \
-		 ft_rules_1.c \
-		 ft_rules_2.c \
-		 ft_three_nums.c \
-		 ft_two_nums.c \
-		 ft_five_hundred_nums.c \
-		 ft_hundred_nums.c \
+		 ft_first_rules.c \
+		 ft_second_rules.c \
 		 ft_array_parse.c \
 		 ft_traverse.c \
 		 ft_bubble_sort.c \
-		 ft_checker.c \
-		 ft_a2i.c \
+		 ft_checkers.c \
+		 ft_atoi_based.c \
 		 ft_error.c \
-		 ft_algorithm.c \
-		 ft_helpers.c
+		 ft_stack_perform_1.c \
+		 ft_stack_perform_2.c \
+		 ft_utils.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

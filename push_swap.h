@@ -24,10 +24,10 @@ typedef struct s_structure
 	int	size;
 }	t_stack;
 
-// Array Parsing
+// Stack Parsing
 void	ft_array_parse(t_stack *st, int ac, char **ag, char c);
 
-// Program Rules
+// Stack Rules
 void	ft_swap(t_stack *st, char c);
 void	ft_swap_both(t_stack *sta, t_stack *stb);
 void	ft_push(t_stack *st1, t_stack *st2, char c);
@@ -38,30 +38,28 @@ void	ft_reverse_rotate_both(t_stack *st1, t_stack *st2);
 
 // Program Helpers
 int		ft_find_min(t_stack *st);
-int		ft_find_min_index(t_stack *st);
 int 	ft_find_value_by_index(int value, t_stack *st, int *arr);
+int		ft_find_max(t_stack *st);
 
-// Nums Algorithms
+// Algorithms
 void	ft_two_nums(t_stack *st);
 void	ft_three_nums(t_stack *st);
 void	ft_four_nums(t_stack *sta, t_stack *stb);
 void	ft_five_nums(t_stack *sta, t_stack *stb);
-void	pusher(t_stack *sta, t_stack *stb, int start, int end);
-void	puller(t_stack *sta, t_stack *stb);
-int		ft_find_max(t_stack *st);
+void	ft_stack_big_range(t_stack *sta, t_stack *stb, int start, int end);
 
-// Array Sorting
-void bubble_sort(t_stack *st);
+// Stack Sorting
+void	bubble_sort(t_stack *st);
 
-// Array Traversal
+// Stack Traversal
 void	ft_traverse(t_stack *st, int *arr);
 
 // Checkers
 int 	check_duplicates(t_stack *st);
 int 	check_range(t_stack *st);
-int		ft_a2i(t_stack *st, const char *str);
+int		ft_atoi_based(t_stack *st, const char *str);
 
-// Array Error
-void ft_error(t_stack *st);
+// Stack Error
+void	ft_error(t_stack *st);
 
 #endif

@@ -58,7 +58,7 @@ void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
 	{
 		while (i <= size)
 		{
-			st->arr[i] = ft_a2i(st, p[k]);
+			st->arr[i] = ft_atoi_based(st, p[k]);
 			st->top++;
 			st->size++;
 			--k;

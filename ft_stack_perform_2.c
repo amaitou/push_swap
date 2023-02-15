@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	puller(t_stack *sta, t_stack *stb)
+static void	ft_push_a(t_stack *sta, t_stack *stb)
 {
 	int	middle;
 	int	index;
@@ -37,22 +37,12 @@ void	puller(t_stack *sta, t_stack *stb)
 	}
 }
 
-void	pusher(t_stack *sta, t_stack *stb, int start, int end)
+static void	ft_push_b(t_stack *sta, t_stack *stb, int start, int end)
 {
 	int	m;
 	int	t;
 	int	c;
 
-	// (void)sta;
-	// (void)stb;
-	// (void)start;
-	// (void)end;
-	// ft_traverse(sta, sta->arr);
-	// ft_traverse(sta, sta->arr);
-	// ft_traverse(sta, sta->c_arr);
-	// ft_printf("size -> %d", sta->size);
-	// exit(0);
-	//ft_traverse(sta, sta->c_arr);
 	while (sta->top)
 	{
 		t = sta->arr[sta->top];
@@ -74,5 +64,10 @@ void	pusher(t_stack *sta, t_stack *stb, int start, int end)
 			ft_rotate(sta, 'a');
 		}
 	}
-	puller(sta, stb);
+}
+
+void	ft_stack_big_range(t_stack *sta, t_stack *stb, int start, int end)
+{
+	ft_push_b(sta, stb, start, end);
+	ft_push_a(sta, stb);
 }
