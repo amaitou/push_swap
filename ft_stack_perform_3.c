@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_stack_perform_3.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 12:14:03 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/16 05:34:06 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/16 04:26:21 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/16 04:41:32 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(int *arr)
+static void	ft_push_a(t_stack *sta, t_stack *stb)
 {
-	if (arr)
-		free(arr);
+	while (stb->size)
+		ft_push(stb, sta, 'a');
 }
 
-void	ft_error(t_stack *sta, t_stack *stb)
+static void	ft_push_b(t_stack *sta, t_stack *stb)
 {
-	ft_free_all(sta, stb);
-	ft_putendl_fd("Error", 2);
-	exit(0);
+	while (sta->size)
+	{
+		ft_push(sta, stb, 'b');
+		ft_rotate(stb, 'b');
+	}
+}
+
+void	ft_stack_reverse(t_stack *sta, t_stack *stb)
+{
+	ft_push_b(sta, stb);
+	ft_push_a(sta, stb);
 }

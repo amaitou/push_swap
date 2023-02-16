@@ -6,7 +6,7 @@
 #    By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 17:33:16 by amait-ou          #+#    #+#              #
-#    Updated: 2023/02/15 18:45:50 by amait-ou         ###   ########.fr        #
+#    Updated: 2023/02/16 07:38:09 by amait-ou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,11 @@ CFILES = push_swap.c \
 		 ft_error.c \
 		 ft_stack_perform_1.c \
 		 ft_stack_perform_2.c \
+		 ft_stack_perform_3.c \
 		 ft_utils.c \
-		 ft_perform_all.c
+		 ft_perform_all.c \
+		 ft_check_sort.c \
+		 ft_free_stack.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

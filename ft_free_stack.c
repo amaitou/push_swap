@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 12:14:03 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/16 05:34:06 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/16 05:32:35 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/16 05:33:49 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(int *arr)
+static void	ft_free_stack(int *arr)
 {
 	if (arr)
 		free(arr);
 }
 
-void	ft_error(t_stack *sta, t_stack *stb)
+void	ft_free_all(t_stack *sta, t_stack *stb)
 {
-	ft_free_all(sta, stb);
-	ft_putendl_fd("Error", 2);
-	exit(0);
+	ft_free_stack(sta->arr);
+	ft_free_stack(sta->c_arr);
+	ft_free_stack(stb->arr);
+	ft_free_stack(stb->c_arr);
 }

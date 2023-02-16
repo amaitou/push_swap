@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:37:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/15 18:47:26 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/16 13:06:12 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ int	main(int ac, char **ag)
 
 	if (ac >= 2)
 	{
-		ft_array_parse(&sta, ac, ag, 'a');
-		ft_array_parse(&stb, ac, ag, 'b');
-		bubble_sort(&sta);
-		if (!check_duplicates(&sta))
-			ft_error(&sta);
-		if (!check_range(&sta))
-			ft_error(&sta);
+		sta.input.ac = ac;
+		sta.input.ag = ag;
+		stb.input.ac = ac;
+		stb.input.ag = ag;
+		ft_array_parse(&sta, 'a');
+		ft_array_parse(&stb, 'b');
 		ft_perform_all(&sta, &stb);
 	}
 	return (0);

@@ -6,22 +6,22 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/15 18:37:06 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/16 13:07:52 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	*read_args(int ac, char **ag)
+static char	*read_args(t_stack *st)
 {
 	int		i;
 	char	*line;
 
 	i = 1;
 	line = (void *)0;
-	while (i < ac)
+	while (i < st->input.ac)
 	{
-		line = string_join(line, ag[i]);
+		line = string_join(line, st->input.ag[i]);
 		line = string_join(line, " ");
 		++i;
 	}
@@ -38,7 +38,7 @@ static int	array_size(char **p)
 	return (i);
 }
 
-void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
+void	ft_array_parse(t_stack *st, char c)
 {
 	char	*line;
 	char	**p;
@@ -46,7 +46,7 @@ void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
 	int		k;
 	int		size;
 
-	line = read_args(ac, ag);
+	line = read_args(st);
 	p = ft_split(line, ' ');
 	size = array_size(p) - 1;
 	k = size;
@@ -58,7 +58,7 @@ void	ft_array_parse(t_stack *st, int ac, char **ag, char c)
 	{
 		while (i <= size)
 		{
-			st->arr[i] = ft_atoi_based(st, p[k]);
+			st->arr[i] = ft_3atwa(p[k]);
 			st->top++;
 			st->size++;
 			--k;

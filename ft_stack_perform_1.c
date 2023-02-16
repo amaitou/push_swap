@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:32:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/15 18:38:36 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/16 05:35:57 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	ft_four_nums(t_stack *sta, t_stack *stb)
 
 void	ft_five_nums(t_stack *sta, t_stack *stb)
 {
-	while (sta->arr[sta->top] != ft_find_min(sta))
-		ft_rotate(sta, 'a');
+	ft_five_nums_helper(sta, stb);
 	ft_push(sta, stb, 'b');
-	ft_four_nums(sta, stb);
+	ft_three_nums(sta);
+	ft_push(stb, sta, 'a');
 	ft_push(stb, sta, 'a');
 }

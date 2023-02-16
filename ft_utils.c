@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 23:29:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/15 18:38:48 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/16 05:07:23 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,31 @@ int	ft_find_value_by_index(int value, t_stack *st, int *arr)
 		++i;
 	}
 	return (i);
+}
+
+void	ft_five_nums_helper(t_stack *sta, t_stack *stb)
+{
+	int	middle;
+	int	index;
+
+	middle = sta->size / 2;
+	index = ft_find_value_by_index(ft_find_min(sta), sta, sta->arr);
+	if (index >= middle)
+	{
+		while (sta->arr[sta->top] != ft_find_min(sta))
+			ft_rotate(sta, 'a');
+	}
+	else
+		while (sta->arr[sta->top] != ft_find_min(sta))
+			ft_reverse_rotate(sta, 'a');
+	ft_push(sta, stb, 'b');
+	index = ft_find_value_by_index(ft_find_min(sta), sta, sta->arr);
+	if (index >= middle)
+	{
+		while (sta->arr[sta->top] != ft_find_min(sta))
+			ft_rotate(sta, 'a');
+	}
+	else
+		while (sta->arr[sta->top] != ft_find_min(sta))
+			ft_reverse_rotate(sta, 'a');
 }
