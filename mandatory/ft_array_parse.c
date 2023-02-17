@@ -6,22 +6,25 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 14:03:17 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:28:26 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	*read_args(t_stack *st)
+static char	*read_args(t_stack *sta, t_stack *stb)
 {
 	int		i;
 	char	*line;
 
 	i = 1;
 	line = (void *)0;
-	while (i < st->input.ac)
+	while (i < sta->input.ac)
 	{
-		line = string_join(line, st->input.ag[i]);
+		if ((sta->input.ag[i][0] == ' ' && !sta->input.ag[i][1])
+			|| !sta->input.ag[i][0])
+			ft_error(sta, stb);
+		line = string_join(line, sta->input.ag[i]);
 		line = string_join(line, " ");
 		++i;
 	}
@@ -51,7 +54,7 @@ void	ft_array_parse(t_stack *sta, t_stack *stb, char c)
 	int		i;
 	int		k;
 
-	line = read_args(sta);
+	line = read_args(sta, stb);
 	p = ft_split(line, ' ');
 	k = array_size(p) - 1;
 	sta->arr = (int *)malloc(sizeof(int) * array_size(p));
