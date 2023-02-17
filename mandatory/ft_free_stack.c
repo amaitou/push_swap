@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 09:37:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/16 13:14:31 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/16 05:32:35 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/17 09:01:27 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **ag)
+static void	ft_free_stack(int *arr)
 {
-	t_stack	sta;
-	t_stack	stb;
+	if (arr)
+		free(arr);
+}
 
-	if (ac >= 2)
-	{
-		sta.input.ac = ac;
-		sta.input.ag = ag;
-		stb.input.ac = ac;
-		stb.input.ag = ag;
-		ft_array_parse(&sta, 'a');
-		ft_array_parse(&stb, 'b');
-		bubble_sort(&sta);
-		ft_perform_all(&sta, &stb);
-	}
-	return (0);
+void	ft_free_all(t_stack *sta, t_stack *stb)
+{
+	ft_free_stack(sta->arr);
+	ft_free_stack(sta->c_arr);
+	ft_free_stack(stb->arr);
+	ft_free_stack(stb->c_arr);
 }

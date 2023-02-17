@@ -1,4 +1,6 @@
 checker*
-push_swap_tester
 *.out
 push_swap
+push_swap_tester
+push_swap_tester2
+*.pdf

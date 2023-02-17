@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:40:51 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/16 13:08:36 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 08:38:35 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ void	ft_perform_all(t_stack *sta, t_stack *stb)
 		ft_if_stack_sorted_reversly(sta, stb);
 	else if (!ft_check_sort_1(sta))
 		ft_if_stack_is_not_sorted(sta, stb);
+	ft_free_all(sta, stb);
 }

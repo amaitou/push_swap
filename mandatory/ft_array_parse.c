@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 07:22:57 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 09:01:34 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,39 +38,34 @@ static int	array_size(char **p)
 	return (i);
 }
 
-void	ft_array_parse(t_stack *st, char c)
+static void	checks(char *s, char **p, t_stack *sta, t_stack *stb)
+{
+	if (duplicates2(p) || random_chars(s))
+		ft_error(sta, stb);
+}
+
+void	ft_array_parse(t_stack *sta, t_stack *stb, char c)
 {
 	char	*line;
 	char	**p;
 	int		i;
 	int		k;
-	int		size;
 
-	line = read_args(st);
+	line = read_args(sta);
 	p = ft_split(line, ' ');
-	size = array_size(p);
-	k = size - 1;
-	st->arr = (int *)malloc(sizeof(int) * size);
-	st->size = 0;
-	st->top = -1;
+	k = array_size(p) - 1;
+	sta->arr = (int *)malloc(sizeof(int) * array_size(p));
+	sta->size = 0;
+	sta->top = -1;
 	i = 0;
 	if (c == 'a')
 	{
-		if (duplicates2(p))
+		while (i < array_size(p))
 		{
-			ft_putendl_fd("Error", 2);
-			exit(0);
-		}
-		while (i < size)
-		{
-			if (random_chars(p[k]))
-			{
-				ft_putendl_fd("Error", 2);
-				exit(0);
-			}
-			st->arr[i] = ft_3atwa(p[k]);
-			st->top++;
-			st->size++;
+			checks(p[k], p, sta, stb);
+			sta->arr[i] = ft_3atwa(p[k], sta, stb);
+			sta->top++;
+			sta->size++;
 			--k;
 			++i;
 		}

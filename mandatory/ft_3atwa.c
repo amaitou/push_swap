@@ -6,13 +6,13 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 09:37:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 07:36:02 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 09:06:38 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_3atwa(char *p)
+long	ft_3atwa(char *p, t_stack *sta, t_stack *stb)
 {
 	int		s;
 	long	r;
@@ -25,10 +25,7 @@ long	ft_3atwa(char *p)
 	if (*p == '-' || *p == '+')
 	{
 		if (*p == '-' && *(p + 1) == '0' && !*(p + 2))
-		{
-			ft_putendl_fd("Error", 2);
-			exit(0);
-		}
+			ft_error(sta, stb);
 		if (*p == '-')
 			s *= -1;
 		++p;
@@ -38,10 +35,7 @@ long	ft_3atwa(char *p)
 		r = r * 10 + *p - 48;
 		++p;
 	}
-	if (r >= INT_MAX || r <= INT_MIN)
-	{
-		ft_putendl_fd("Error", 2);
-		exit(0);
-	}
+	if (s * r > INT_MAX || s * r < INT_MIN)
+		ft_error(sta, stb);
 	return (r * s);
 }

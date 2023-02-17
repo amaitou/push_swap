@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 07:21:41 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:40:06 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 /* Header Files */
-# include "./superlib/superlib.h"
+# include "../superlib/superlib.h"
 
 typedef struct s_input
 {
@@ -33,8 +33,11 @@ typedef struct s_structure
 	t_input	input;
 }	t_stack;
 
+// Struct Memebers Initialization
+void	ft_struct_init(t_stack *sta, t_stack *stb, int ac, char **ag);
+
 // Stack Parsing
-void	ft_array_parse(t_stack *st, char c);
+void	ft_array_parse(t_stack *sta, t_stack *stb, char c);
 
 // Stack Rules
 void	ft_swap(t_stack *st, char c);
@@ -67,7 +70,7 @@ void	bubble_sort(t_stack *st);
 void	ft_traverse(t_stack *st, int *arr);
 
 // Checkers
-long	ft_3atwa(char *p);
+long	ft_3atwa(char *p, t_stack *sta, t_stack *stb);
 int		random_chars(char *s);
 int		weird_zero(char *s);
 int		duplicates1(int *arr, int size);

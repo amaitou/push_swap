@@ -6,29 +6,29 @@
 #    By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 17:33:16 by amait-ou          #+#    #+#              #
-#    Updated: 2023/02/17 07:25:56 by amait-ou         ###   ########.fr        #
+#    Updated: 2023/02/17 10:41:16 by amait-ou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wextra -Werror -Werror
 NAME = push_swap
-CFILES = push_swap.c \
-		 ft_first_rules.c \
-		 ft_second_rules.c \
-		 ft_array_parse.c \
-		 ft_traverse.c \
-		 ft_bubble_sort.c \
-		 ft_checkers.c \
-		 ft_3atwa.c \
-		 ft_error.c \
-		 ft_stack_perform_1.c \
-		 ft_stack_perform_2.c \
-		 ft_stack_perform_3.c \
-		 ft_utils.c \
-		 ft_perform_all.c \
-		 ft_check_sort.c \
-		 ft_free_stack.c
+CFILES = ./mandatory/push_swap.c \
+		 ./mandatory/ft_first_rules.c \
+		 ./mandatory/ft_second_rules.c \
+		 ./mandatory/ft_array_parse.c \
+		 ./mandatory/ft_bubble_sort.c \
+		 ./mandatory/ft_checkers.c \
+		 ./mandatory/ft_3atwa.c \
+		 ./mandatory/ft_error.c \
+		 ./mandatory/ft_stack_perform_1.c \
+		 ./mandatory/ft_stack_perform_2.c \
+		 ./mandatory/ft_stack_perform_3.c \
+		 ./mandatory/ft_utils.c \
+		 ./mandatory/ft_perform_all.c \
+		 ./mandatory/ft_check_sort.c \
+		 ./mandatory/ft_free_stack.c \
+		 ./mandatory/ft_struct_init.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

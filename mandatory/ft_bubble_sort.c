@@ -1,26 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_traverse.c                                      :+:      :+:    :+:   */
+/*   ft_bubble_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 06:33:53 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/15 17:33:03 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/12 00:16:33 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/17 09:01:39 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_traverse(t_stack *st, int *arr)
+static void	copy_stack(t_stack *st)
 {
+	int	*p;
 	int	i;
 
 	i = 0;
+	st->c_arr = (int *)malloc(sizeof(int) * st->len);
+	if (!st->c_arr)
+		return ;
 	while (i < st->size)
 	{
-		ft_printf("%d ", arr[i]);
+		st->c_arr[i] = st->arr[i];
 		++i;
 	}
-	ft_printf("\n");
+}
+
+void	bubble_sort(t_stack *st)
+{
+	int	i;
+	int	j;
+	int	t;
+
+	i = 0;
+	copy_stack(st);
+	while (i < st->size)
+	{
+		j = i + 1;
+		while (j < st->size)
+		{
+			if (st->c_arr[i] > st->c_arr[j])
+			{
+				t = st->c_arr[i];
+				st->c_arr[i] = st->c_arr[j];
+				st->c_arr[j] = t;
+			}
+			++j;
+		}
+		++i;
+	}
 }
