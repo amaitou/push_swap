@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 10:40:06 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 11:26:53 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,11 @@ void	ft_perform_all(t_stack *sta, t_stack *stb);
 // Stack Sorting
 void	bubble_sort(t_stack *st);
 
-// Stack Traversal
-void	ft_traverse(t_stack *st, int *arr);
-
 // Checkers
 long	ft_3atwa(char *p, t_stack *sta, t_stack *stb);
 int		random_chars(char *s);
-int		weird_zero(char *s);
 int		duplicates1(int *arr, int size);
 int		duplicates2(char **p);
-int		out_of_range(int *arr, int size);
 int		ft_check_sort_1(t_stack *sta);
 int		ft_check_sort_2(t_stack *sta);
 

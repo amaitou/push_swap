@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/15 17:33:16 by amait-ou          #+#    #+#              #
-#    Updated: 2023/02/17 10:41:16 by amait-ou         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 CC = cc
 CFLAGS = -Wextra -Werror -Werror
 NAME = push_swap
@@ -39,7 +27,8 @@ $(SUPERLIB):
 	@$(MAKE) -C $(SUPERLIB_DIR)
 
 $(NAME): $(CFILES)
-	$(CC) $(CFLAGS) $? $(SUPERLIB) -o $@
+	@echo "\033[95m[.] output *.c to push_swap\033[0m"
+	@$(CC) $(CFLAGS) $? $(SUPERLIB) -o $@
 
 clean:
 	@$(MAKE) fclean -C $(SUPERLIB_DIR)
