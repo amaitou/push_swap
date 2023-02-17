@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/16 13:07:45 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 07:21:41 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ void	ft_traverse(t_stack *st, int *arr);
 long	ft_3atwa(char *p);
 int		random_chars(char *s);
 int		weird_zero(char *s);
-int		duplicates(int *arr, int size);
+int		duplicates1(int *arr, int size);
+int		duplicates2(char **p);
 int		out_of_range(int *arr, int size);
 int		ft_check_sort_1(t_stack *sta);
 int		ft_check_sort_2(t_stack *sta);

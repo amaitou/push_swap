@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/16 13:11:50 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 07:22:57 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,18 @@ void	ft_array_parse(t_stack *st, char c)
 	i = 0;
 	if (c == 'a')
 	{
+		if (duplicates2(p))
+		{
+			ft_putendl_fd("Error", 2);
+			exit(0);
+		}
 		while (i < size)
 		{
+			if (random_chars(p[k]))
+			{
+				ft_putendl_fd("Error", 2);
+				exit(0);
+			}
 			st->arr[i] = ft_3atwa(p[k]);
 			st->top++;
 			st->size++;

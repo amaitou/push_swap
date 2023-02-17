@@ -6,7 +6,7 @@
 #    By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 17:33:16 by amait-ou          #+#    #+#              #
-#    Updated: 2023/02/16 07:38:09 by amait-ou         ###   ########.fr        #
+#    Updated: 2023/02/17 07:25:56 by amait-ou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFILES = push_swap.c \
 		 ft_traverse.c \
 		 ft_bubble_sort.c \
 		 ft_checkers.c \
-		 ft_atoi_based.c \
+		 ft_3atwa.c \
 		 ft_error.c \
 		 ft_stack_perform_1.c \
 		 ft_stack_perform_2.c \
