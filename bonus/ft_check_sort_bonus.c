@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_check_sort_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 12:14:03 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 19:01:27 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/16 04:52:15 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/17 16:41:36 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	ft_free_stack(int *arr)
+int	ft_check_sort_1(t_stack *sta)
 {
-	if (arr)
-		free(arr);
+	int	i;
+
+	i = sta->size - 1;
+	while (i)
+	{
+		if (!(sta->arr[i] < sta->arr[i - 1]))
+			return (0);
+		--i;
+	}
+	return (1);
 }
 
-void	ft_error(t_stack *sta, t_stack *stb)
+int	ft_check_sort_2(t_stack *sta)
 {
-	ft_free_all(sta, stb);
-	ft_putendl_fd("Error", 2);
-	exit(0);
+	int	i;
+
+	i = sta->size - 1;
+	while (i)
+	{
+		if (!(sta->arr[i] > sta->arr[i - 1]))
+			return (0);
+		--i;
+	}
+	return (1);
 }

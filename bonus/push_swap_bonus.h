@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 16:37:27 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:55:51 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 /* Header Files */
 # include "../superlib/superlib.h"
@@ -48,24 +48,6 @@ void	ft_rotate_both(t_stack *st1, t_stack *st2);
 void	ft_reverse_rotate(t_stack *st, char c);
 void	ft_reverse_rotate_both(t_stack *st1, t_stack *st2);
 
-// Program Helpers
-int		ft_find_min(t_stack *st);
-int		ft_find_value_by_index(int value, t_stack *st, int *arr);
-int		ft_find_max(t_stack *st);
-void	ft_five_nums_helper(t_stack *sta, t_stack *stb);
-
-// Algorithms
-void	ft_two_nums(t_stack *st);
-void	ft_three_nums(t_stack *st);
-void	ft_four_nums(t_stack *sta, t_stack *stb);
-void	ft_five_nums(t_stack *sta, t_stack *stb);
-void	ft_stack_big_range(t_stack *sta, t_stack *stb, int start, int end);
-void	ft_stack_reverse(t_stack *sta, t_stack *stb);
-void	ft_perform_all(t_stack *sta, t_stack *stb);
-
-// Stack Sorting
-void	bubble_sort(t_stack *st);
-
 // Checkers
 long	ft_3atwa(char *p, t_stack *sta, t_stack *stb);
 int		random_chars(char *s);
@@ -79,5 +61,9 @@ void	ft_error(t_stack *sta, t_stack *stb);
 
 // Free Stack
 void	ft_free_all(t_stack *sta, t_stack *stb);
+
+// Checker Functions
+void	first_checker(t_stack *sta, t_stack *stb, char *instruction);
+void	second_checker(t_stack *sta, t_stack *stb, char *instruction);
 
 #endif

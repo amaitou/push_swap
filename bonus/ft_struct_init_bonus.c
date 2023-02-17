@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_struct_init_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 12:14:03 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 19:01:27 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/17 10:38:10 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/17 16:42:53 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	ft_free_stack(int *arr)
+void	ft_struct_init(t_stack *sta, t_stack *stb, int ac, char **ag)
 {
-	if (arr)
-		free(arr);
-}
-
-void	ft_error(t_stack *sta, t_stack *stb)
-{
-	ft_free_all(sta, stb);
-	ft_putendl_fd("Error", 2);
-	exit(0);
+	sta->input.ac = ac;
+	sta->input.ag = ag;
+	stb->input.ac = ac;
+	stb->input.ag = ag;
+	sta->arr = NULL;
+	stb->arr = NULL;
+	sta->c_arr = NULL;
+	stb->c_arr = NULL;
 }
