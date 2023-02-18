@@ -18,7 +18,7 @@ static void	copy_stack(t_stack *st)
 	int	i;
 
 	i = 0;
-	st->c_arr = (int *)malloc(sizeof(int) * st->len);
+	st->c_arr = (int *)malloc(sizeof(int) * st->size);
 	if (!st->c_arr)
 		return ;
 	while (i < st->size)

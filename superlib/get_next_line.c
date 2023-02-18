@@ -39,12 +39,12 @@ char	*get_stash(int fd, char *stash)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stash[INT_MAX];
+	static char	*stash;
 
 	if (fd < 0 || fd == 1 || fd == 2 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stash[fd] = get_stash(fd, stash[fd]);
-	line = get_one_line(stash[fd]);
-	stash[fd] = free_stash(stash[fd]);
+	stash = get_stash(fd, stash);
+	line = get_one_line(stash);
+	stash = free_stash(stash);
 	return (line);
 }

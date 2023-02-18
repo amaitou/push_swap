@@ -28,7 +28,6 @@ static char	*read_args(t_stack *sta, t_stack *stb)
 		line = string_join(line, " ");
 		++i;
 	}
-	free(line);
 	return (line);
 }
 
