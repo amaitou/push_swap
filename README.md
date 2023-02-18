@@ -1,4 +1,6 @@
 ---
+![70d6f4e10e2badb5ef394f00c17ad2bc1c14f6e7](https://user-images.githubusercontent.com/49293816/219866055-c644c6b0-c9b5-46d1-80f3-b2f78e6f7303.jpeg)
+
 ---
 
 # Push Swap
@@ -63,9 +65,9 @@ first of all, after parsing the arguments into the `stack a` and checking if the
 
 secondly, hold the top of `stack a` and get its index from the sorted stack once you have it, let's check if does belong to the range or not.
 
-> 100 -> the range will something similar to (0.15)
+> 100 -> the range will be something similar to (0.15)
 
-> 500 -> the range will something similar to (0.30)
+> 500 -> the range will be something similar to (0.30)
 
 - If the index of the top of `stack a` from the sorted stack is less than or equal to the start of the range, we **pb** the element to `stack b`, rotate the `stack b` and increase the start and the end of the range by one.
 - If the index of the top of `stack a` from the sorted stack is greater than the start of the range and smaller than the end of the range, we **pb** the element to `stack b` and increase the start as well as the end of the range by one.
