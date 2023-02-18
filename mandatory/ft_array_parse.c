@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 16:28:26 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/18 11:43:06 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static char	*read_args(t_stack *sta, t_stack *stb)
 		line = string_join(line, " ");
 		++i;
 	}
+	free(line);
 	return (line);
 }
 
@@ -45,6 +46,19 @@ static void	checks(char *s, char **p, t_stack *sta, t_stack *stb)
 {
 	if (duplicates2(p) || random_chars(s))
 		ft_error(sta, stb);
+}
+
+static void	free_split(char **p)
+{
+	int	i;
+
+	i = 0;
+	while (p[i])
+	{
+		free(p[i]);
+		++i;
+	}
+	free(p);
 }
 
 void	ft_array_parse(t_stack *sta, t_stack *stb, char c)
@@ -73,4 +87,5 @@ void	ft_array_parse(t_stack *sta, t_stack *stb, char c)
 			++i;
 		}
 	}
+	free_split(p);
 }
