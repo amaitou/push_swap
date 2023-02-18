@@ -53,7 +53,7 @@ clean:
 	@$(MAKE) fclean -C $(SUPERLIB_DIR)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(CHECKER)
 
 re: fclean all
 
