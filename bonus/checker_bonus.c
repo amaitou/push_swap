@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 08:48:23 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/18 11:45:17 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/18 16:44:31 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ int	main(int ac, char **ag)
 				ft_error(&sta, &stb);
 			line = get_next_line(0);
 		}
-		free(line);
 		is_sorted(&sta, &stb);
 	}
 }
