@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:38:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 16:37:27 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:27:54 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_structure
 {
 	int		*arr;
 	int		*c_arr;
-	int		len;
 	int		top;
 	int		size;
 	char	*line;

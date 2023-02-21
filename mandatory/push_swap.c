@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:37:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 10:40:51 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:18:33 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	main(int ac, char **ag)
 	{
 		ft_struct_init(&sta, &stb, ac, ag);
 		ft_array_parse(&sta, &stb, 'a');
-		ft_array_parse(&stb, &sta, 'b');
-		bubble_sort(&sta);
+		stb.arr = (int *)malloc(sizeof(int) * sta.size);
 		if (duplicates1(sta.arr, sta.size))
 			ft_error(&sta, &stb);
+		bubble_sort(&sta);
 		ft_perform_all(&sta, &stb);
 	}
 	return (0);

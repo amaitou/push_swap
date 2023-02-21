@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 04:27:40 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/15 18:38:40 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:34:49 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	ft_push_b(t_stack *sta, t_stack *stb, int start, int end)
 	int	t;
 	int	c;
 
-	while (sta->top)
+	while (sta->size)
 	{
 		t = sta->arr[sta->top];
 		if (t <= sta->c_arr[start])

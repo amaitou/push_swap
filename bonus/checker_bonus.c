@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 08:48:23 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/18 11:45:17 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:35:01 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	valid_instruction(char *line)
 	return (0);
 }
 
-static void	stack_perform(char *line, t_stack *sta, t_stack *stb)
+static void	stack_perform_1(char *line, t_stack *sta, t_stack *stb)
 {
 	if (!ft_strcmp(line, "sa\n"))
 		ft_swap(sta, 'a');
@@ -43,16 +43,6 @@ static void	stack_perform(char *line, t_stack *sta, t_stack *stb)
 		ft_push(sta, stb, 'b');
 	else if (!ft_strcmp(line, "ra\n"))
 		ft_rotate(sta, 'a');
-	else if (!ft_strcmp(line, "rb\n"))
-		ft_rotate(stb, 'b');
-	else if (!ft_strcmp(line, "rr\n"))
-		ft_rotate_both(sta, stb);
-	else if (!ft_strcmp(line, "rra\n"))
-		ft_reverse_rotate(sta, 'a');
-	else if (!ft_strcmp(line, "rrb\n"))
-		ft_reverse_rotate(stb, 'b');
-	else if (!ft_strcmp(line, "rrr\n"))
-		ft_reverse_rotate_both(sta, stb);
 }
 
 static void	stack_perform_2(char *line, t_stack *sta, t_stack *stb)
@@ -88,19 +78,21 @@ int	main(int ac, char **ag)
 	{
 		ft_struct_init(&sta, &stb, ac, ag);
 		ft_array_parse(&sta, &stb, 'a');
-		ft_array_parse(&stb, &sta, 'b');
+		stb.arr = (int *)malloc(sizeof(int) * sta.size);
 		if (duplicates1(sta.arr, sta.size))
 			ft_error(&sta, &stb);
 		line = get_next_line(0);
 		while (line)
 		{
 			if (valid_instruction(line))
-				stack_perform(line, &sta, &stb);
+			{
+				stack_perform_1(line, &sta, &stb);
+				stack_perform_2(line, &sta, &stb);
+			}
 			else
 				ft_error(&sta, &stb);
 			line = get_next_line(0);
 		}
-		free(line);
 		is_sorted(&sta, &stb);
 	}
 }

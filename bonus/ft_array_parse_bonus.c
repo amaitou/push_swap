@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 09:41:17 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/18 11:35:36 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:33:29 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,24 +67,21 @@ void	ft_array_parse(t_stack *sta, t_stack *stb, char c)
 	int		i;
 	int		k;
 
+	(void)c;
 	line = read_args(sta, stb);
 	p = ft_split(line, ' ');
 	k = array_size(p) - 1;
 	sta->arr = (int *)malloc(sizeof(int) * array_size(p));
-	sta->size = 0;
-	sta->top = -1;
 	i = 0;
-	if (c == 'a')
+	while (i < array_size(p))
 	{
-		while (i < array_size(p))
-		{
-			checks(p[k], p, sta, stb);
-			sta->arr[i] = ft_3atwa(p[k], sta, stb);
-			sta->top++;
-			sta->size++;
-			--k;
-			++i;
-		}
+		checks(p[k], p, sta, stb);
+		sta->arr[i] = ft_3atwa(p[k], sta, stb);
+		sta->top++;
+		sta->size++;
+		--k;
+		++i;
 	}
 	free_split(p);
+	free(line);
 }

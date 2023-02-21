@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 09:10:11 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/17 09:01:24 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:53:36 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ int	duplicates1(int *arr, int size)
 		while (j < size)
 		{
 			if (arr[i] == arr[j])
+			{
 				return (1);
+			}
 			++j;
 		}
 		++i;
