@@ -12,7 +12,7 @@ You have at your disposal a set of integer values, 2 stacks, and a set of instru
 Your goal? Write a program in C called `push_swap` which calculates and displays
 on the standard output the smallest program, made of `Push swap language instructions`, that sorts the integers received as arguments.
 
-**```Note: I haven't shared the PDF of this project, as well as, I haven't explained anything due to school privacy reasons!```**
+**``` Note: I haven't shared the PDF of this project, as well as, I haven't explained anything due to school privacy reasons!```**
 
 This project consists of two parts:
 - **Mandatory part**
@@ -29,7 +29,7 @@ Here are the rules that I have used in this project's makefile:
 - all -> to make the mandatory part
 - bonus -> to make the mandatory as well as the bonus part
 - clean -> to clean the project from all executable and object file
-- fclean -> it does the same thing as `clean` but it removes the compiled libraries as well
+- fclean -> It does the same thing as `clean` but it removes the compiled libraries as well
 - re -> it deletes and re-compiles all the things from scratch
 
 ---
@@ -38,13 +38,13 @@ Here are the rules that I have used in this project's makefile:
 
 Since we have a limited number of instructions as well as a stack to deal with, we have to make that we have to implement an algorithm that efficiently sorts the stack in a small number of instructions. <br />
 That's why I have many and many algorithms to have the projects done but they don't make me feel satisfied as some of them are too fucking complicated and others will not give the full score (bonus included) like the sorting algorithm `Radix Sorting Algorithm`. <br />
-that's what lead me to find another algorithm that gives the full score as well as it is too much easier rather the other ones, and here is how it works. <br />
+that's what led me to find another algorithm that gives the full score as well as it is much easier rather the other ones, and here is how it works. <br />
 
 First of all, let's see the instructions we have to sort the stack :
 - **sa (swap a)**: Swap the first 2 elements at the top of `stack a`.
-Do nothing if there is only one or no elements.
+Do nothing if there is only one or no element.
 - **sb (swap b)**: Swap the first 2 elements at the top of `stack b`.
-Do nothing if there is only one or no elements.
+Do nothing if there is only one or no element.
 - **ss** : sa and sb at the same time.
 - **pa (push a)**: Take the first element at the top of b and put it at the top of a.
 Do nothing if b is empty.
@@ -65,9 +65,9 @@ first of all, after parsing the arguments into the `stack a` and checking if the
 
 secondly, hold the top of `stack a` and get its index from the sorted stack once you have it, let's check if does belong to the range or not.
 
-> 100 -> the range will be something similar to (0.15)
+> 100 -> The range will be something similar to (0.15)
 
-> 500 -> the range will be something similar to (0.30)
+> 500 -> The range will be something similar to (0.30)
 
 - If the index of the top of `stack a` from the sorted stack is less than or equal to the start of the range, we **pb** the element to `stack b`, rotate the `stack b` and increase the start and the end of the range by one.
 - If the index of the top of `stack a` from the sorted stack is greater than the start of the range and smaller than the end of the range, we **pb** the element to `stack b` and increase the start as well as the end of the range by one.
