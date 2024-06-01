@@ -93,9 +93,7 @@ By the end of this algorithm, you will see this stack sorted in an appropriate n
 # Contact Me
 
 * [Twitter][_1]
-* [Instagram][_2]
 
 [_1]: https://twitter.com/amait0u
-[_2]: https://www.instagram.com/amait0u
 
 ---
